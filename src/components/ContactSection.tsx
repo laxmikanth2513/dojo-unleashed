@@ -63,7 +63,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="text-muted-foreground text-sm">Email</p>
-                <p className="font-heading font-bold text-lg">info@eliteacademy.com</p>
+                <p className="font-heading font-bold text-lg">info@ironfistacademy.com</p>
               </div>
             </div>
           </motion.div>
@@ -99,7 +99,7 @@ const ContactSection = () => {
               rows={5}
               className="bg-card border-border"
             />
-            <Button variant="hero" size="lg" className="w-full py-6" type="submit">
+            <Button variant="hero" size="lg" className="w-full py-6 text-sm sm:text-lg" type="submit">
               Start Your Training Today
             </Button>
           </motion.form>
