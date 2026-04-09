@@ -34,7 +34,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-tight mb-6"
+            className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-tight mb-6"
           >
             Become Stronger.{" "}
             <span className="text-gradient">Faster.</span>{" "}
