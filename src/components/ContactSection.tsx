@@ -63,7 +63,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="text-muted-foreground text-sm">Email</p>
-                <p className="font-heading font-bold text-lg">info@ironfistacademy.com</p>
+                <p className="font-heading font-bold text-sm sm:text-lg break-all">info@mnssuccessacademy.com</p>
               </div>
             </div>
           </motion.div>
