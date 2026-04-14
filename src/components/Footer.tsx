@@ -5,7 +5,6 @@ const Footer = () => {
         <p className="font-heading text-xl font-bold uppercase mb-2">
           <span className="text-primary">MNS Success</span> Martial Arts Academy
         </p>
-        </p>
         <p className="text-muted-foreground text-sm">
           © {new Date().getFullYear()} MNS Success Martial Arts Academy. All rights reserved.
         </p>
