@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import masterPhoto from "@/assets/master-photo.jpg";
+import masterPhoto from "@/assets/master-photo.png";
 
 const MasterSection = () => {
   return (
