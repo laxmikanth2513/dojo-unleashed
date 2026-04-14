@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import masterPhoto from "@/assets/master-photo.jpg";
+import masterPhoto from "@/assets/master-photo.png";
 
 const galleryImages = [
   { src: heroBg, alt: "Training session", category: "Training" },

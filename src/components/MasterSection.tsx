@@ -14,16 +14,15 @@ const MasterSection = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative overflow-hidden rounded-lg">
+            <div className="relative overflow-hidden rounded-lg bg-gradient-to-b from-secondary to-background p-4 sm:p-8">
               <img
                 src={masterPhoto}
                 alt="Master Instructor"
-                className="w-full object-cover"
+                className="w-full max-w-sm mx-auto object-contain"
                 loading="lazy"
                 width={800}
                 height={1024}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             </div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-primary rounded-lg" />
           </motion.div>
