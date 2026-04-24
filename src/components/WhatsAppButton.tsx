@@ -3,11 +3,27 @@ import { MessageCircle } from "lucide-react";
 const WhatsAppButton = () => {
   const phoneNumber = "916301846700";
   const message = "Hi, I'm interested in MNS Success Martial Arts Academy.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const encoded = encodeURIComponent(message);
+    // Detect mobile to use the native app deep link, otherwise use web
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const url = isMobile
+      ? `whatsapp://send?phone=${phoneNumber}&text=${encoded}`
+      : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encoded}`;
+    // Fallback to api.whatsapp.com if needed
+    const fallback = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encoded}`;
+    const win = window.open(url, "_blank");
+    if (!win) {
+      window.location.href = fallback;
+    }
+  };
 
   return (
     <a
-      href={whatsappUrl}
+      href={`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`}
+      onClick={handleClick}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
