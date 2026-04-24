@@ -1,11 +1,38 @@
+import type { MouseEvent } from "react";
 import { MessageCircle } from "lucide-react";
 
+const WHATSAPP_URL = "https://wa.me/916301846700?text=Hi%20I%20am%20interested%20in%20your%20services";
+
 const WhatsAppButton = () => {
-  const whatsappUrl = "https://wa.me/916301846700?text=Hi%20I%20am%20interested%20in%20your%20services%E2%80%9D";
+  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+
+    let openedWindow: Window | null = null;
+
+    try {
+      openedWindow = window.open(WHATSAPP_URL, "_blank", "noopener,noreferrer");
+    } catch {
+      openedWindow = null;
+    }
+
+    if (!openedWindow) {
+      try {
+        if (window.top && window.top !== window) {
+          window.top.location.href = WHATSAPP_URL;
+          return;
+        }
+      } catch {
+        // Ignore iframe cross-origin restrictions and use same-window fallback.
+      }
+
+      window.location.href = WHATSAPP_URL;
+    }
+  };
 
   return (
     <a
-      href={whatsappUrl}
+      href={WHATSAPP_URL}
+      onClick={handleClick}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Open WhatsApp chat"
