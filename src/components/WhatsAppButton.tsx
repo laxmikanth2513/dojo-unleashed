@@ -1,9 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "916301846700";
-  const message = "Hi, I'm interested in MNS Success Martial Arts Academy.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = "https://wa.me/916301846700?text=Hi%20I%20am%20interested%20in%20your%20services";
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // Ensure it always breaks out of any iframe/embedded preview
