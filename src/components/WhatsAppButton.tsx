@@ -3,11 +3,18 @@ import { MessageCircle } from "lucide-react";
 const WhatsAppButton = () => {
   const phoneNumber = "916301846700";
   const message = "Hi, I'm interested in MNS Success Martial Arts Academy.";
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Ensure it always breaks out of any iframe/embedded preview
+    e.preventDefault();
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <a
       href={whatsappUrl}
+      onClick={handleClick}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Open WhatsApp chat"
@@ -18,5 +25,7 @@ const WhatsAppButton = () => {
     </a>
   );
 };
+
+export default WhatsAppButton;
 
 export default WhatsAppButton;
